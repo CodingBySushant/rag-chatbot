@@ -1,0 +1,160 @@
+ACME STORE - TECHNICAL TROUBLESHOOTING GUIDE
+============================================
+
+WEBSITE & APP ISSUES
+---------------------
+
+Problem: Cannot log in to my account
+Solutions:
+1. Check if Caps Lock is ON — passwords are case-sensitive
+2. Try "Forgot Password" to reset your password
+3. If you signed up with Google/Facebook, use that login option instead
+4. Clear your browser cache and cookies, then try again
+5. Try a different browser or incognito/private mode
+6. Disable browser extensions that might block scripts
+7. Check if your account is blocked — too many failed attempts lock account for 30 minutes
+8. Contact support if none of the above works — provide your registered email
+
+Problem: App is crashing or not loading
+Solutions:
+1. Force close the app and reopen
+2. Check your internet connection
+3. Update the app to the latest version from Play Store / App Store
+4. Clear app cache: Settings > Apps > ACME Store > Clear Cache
+5. Restart your phone
+6. Uninstall and reinstall the app (your data is saved to the cloud)
+7. Check if there is a known outage at status.acmestore.com
+
+Problem: OTP not received
+Solutions:
+1. Wait 60 seconds before requesting a new OTP
+2. Check if your mobile number is correct
+3. Check SMS spam/blocked messages folder
+4. Ensure you have mobile network (not just WiFi for SMS)
+5. Try the "Call me instead" option for OTP via call
+6. If issue persists for more than 10 minutes, contact support
+
+Problem: Payment page not loading
+Solutions:
+1. Disable VPN if active
+2. Try a different browser (Chrome recommended)
+3. Ensure JavaScript is enabled in your browser
+4. Clear browser cache and cookies
+5. Try a different payment method
+6. Check if your bank's website is accessible (may be a bank-side issue)
+
+ORDER RELATED ISSUES
+--------------------
+
+Problem: My order shows delivered but I haven't received it
+Steps to resolve:
+1. Check with family members or neighbors — someone may have accepted on your behalf
+2. Check with building security or reception
+3. Check the delivery photo if available in Order Tracking
+4. Wait 24 hours — sometimes delivery status updates before actual delivery
+5. If still not received after 24 hours, raise a complaint in My Orders > Report an Issue
+6. We will investigate with the courier and resolve within 48 hours
+7. If confirmed undelivered, a replacement or full refund will be issued
+
+Problem: Order is stuck "Out for Delivery" for more than 2 days
+Steps:
+1. Click "Track Order" to see real-time location
+2. Call the delivery partner using the number in Order Tracking
+3. If unreachable, raise a complaint through the app/website
+4. We will contact the courier partner and resolve within 24 hours
+
+Problem: Item missing from my order
+Steps:
+1. Check if items were shipped in separate packages (common for multi-item orders)
+2. Check if all packages have been delivered (track each separately)
+3. If a package is missing, raise a complaint within 48 hours with your order ID
+4. Provide photos of what you received and the outer packaging
+5. Missing item will be reshipped or refunded within 3-5 business days
+
+PAYMENT ISSUES
+--------------
+
+Problem: Money deducted but order not placed
+This is a common issue with payment gateways. Here is what happens:
+- The amount is held by your bank/payment provider
+- If the order wasn't created, the hold is auto-released within 5-7 business days
+- You do NOT need to contact your bank — it will resolve automatically
+- Check your email for any order confirmation
+- If you don't receive a refund within 7 business days, contact us with your transaction ID
+
+Problem: Coupon code not working
+Common reasons:
+1. Coupon has expired — check the validity date
+2. Minimum order value not met — check coupon terms
+3. Product category not eligible — some coupons apply to specific categories
+4. Already used — most coupons are one-time use per account
+5. Not applicable on sale items — check if coupon excludes discounted products
+6. Incorrect entry — check for spaces or typos, codes are case-insensitive
+
+Problem: EMI option not showing at checkout
+Reasons this may happen:
+1. Your card may not be eligible — only select bank cards support no-cost EMI
+2. Order value below ₹3000 — minimum threshold for EMI
+3. Product may be excluded from EMI offers
+4. Bank server issue — try again after some time
+Contact your bank to confirm if your card supports EMI purchases.
+
+RETURNS & REFUND ISSUES
+------------------------
+
+Problem: Return request rejected
+Possible reasons:
+1. Return window expired (30 days for most products, 7 days for electronics)
+2. Product shows signs of use or damage not present at delivery
+3. Original packaging or tags missing
+4. Product category not eligible for returns (opened personal care, customized items)
+If you believe the rejection was incorrect, reply to your return rejection email with supporting photos to appeal.
+
+Problem: Refund not received after 10 days
+Steps:
+1. Check your refund status in My Orders > Return/Refund Status
+2. Confirm the refund was approved and processed date
+3. Check the refund mode — it goes back to original payment method
+4. For credit/debit cards, check with your bank using the Refund Reference ID we provide
+5. For UPI, check all linked UPI IDs in your UPI app
+6. Contact support with your Return ID and we will investigate with payment gateway
+
+ACCOUNT & SECURITY ISSUES
+--------------------------
+
+Problem: Suspicious activity or unauthorized orders
+Immediate steps:
+1. Change your password immediately via Forgot Password
+2. Go to Account Settings > Active Sessions and log out all other devices
+3. Check if your registered email or phone was changed — report to support immediately
+4. Review recent orders and raise dispute for any unauthorized purchases
+5. Contact support at security@acmestore.com for urgent cases
+6. We recommend enabling Two-Factor Authentication (2FA) in Account Settings > Security
+
+Problem: Cannot update phone number — OTP going to old number I no longer have access to
+Resolution process:
+1. Email support@acmestore.com from your registered email address
+2. Subject: "Mobile Number Update - Account Verification Required"
+3. Provide: Full name, email, old mobile number, new mobile number, last order ID
+4. Our team will verify your identity and update manually within 24-48 hours
+5. You may be asked to submit a government ID for verification
+
+CONTACT & ESCALATION
+--------------------
+
+For technical issues not resolved by this guide:
+
+Level 1 Support (General queries):
+- Live Chat: acmestore.com (9 AM - 9 PM)
+- Email: support@acmestore.com
+- Response time: Within 4 hours during business hours
+
+Level 2 Support (Complex issues, disputes):
+- Phone: 1800-123-4567
+- Available: Monday to Saturday, 9 AM to 6 PM
+- Have your Order ID and registered email ready
+
+Level 3 (Escalations, unresolved after 7 days):
+- Email: grievance@acmestore.com
+- Response within 48 hours guaranteed
+- Include your ticket number from previous interactions

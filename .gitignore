@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+chatbot_env/
+
+# Database and vector store (too large, regenerated on startup)
+qdrant_db/
+orders.db
+ingested_hashes.json
+
+# OS
+.DS_Store
+Thumbs.db

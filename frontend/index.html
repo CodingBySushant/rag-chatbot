@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SupportAI</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f5f5;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+    }
+
+    h1 { font-size: 18px; font-weight: 600; color: #111; margin-bottom: 20px; }
+
+    /* ── Chat ── */
+    #chat {
+      width: 100%;
+      max-width: 680px;
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-bottom: 12px;
+    }
+
+    .msg { display: flex; flex-direction: column; gap: 6px; }
+    .msg.user { align-items: flex-end; }
+    .msg.bot  { align-items: flex-start; }
+
+    .bubble {
+      max-width: 80%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.65;
+      white-space: pre-wrap;
+    }
+
+    .msg.user .bubble {
+      background: #2563eb;
+      color: #fff;
+      border-bottom-right-radius: 4px;
+    }
+
+    .msg.bot .bubble {
+      background: #fff;
+      color: #111;
+      border: 1px solid #e0e0e0;
+      border-bottom-left-radius: 4px;
+    }
+
+    .bubble.typing::after {
+      content: '|';
+      animation: blink 0.8s step-end infinite;
+      color: #2563eb;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* ── Order badge ── */
+    .order-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 20px;
+      max-width: 80%;
+    }
+
+    .order-badge.not-found {
+      background: #fff7ed;
+      border-color: #fed7aa;
+      color: #c2410c;
+    }
+
+    /* ── Sources ── */
+    .sources {
+      max-width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+
+    .source-label { color: #999; font-size: 11px; width: 100%; }
+
+    .source-tag {
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 2px 10px;
+      color: #555;
+      white-space: nowrap;
+    }
+
+    /* ── Input ── */
+    #input-area {
+      width: 100%;
+      max-width: 680px;
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    #question {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      background: #fff;
+      transition: border-color 0.2s;
+    }
+    #question:focus { border-color: #2563eb; }
+
+    #send {
+      padding: 10px 18px;
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    #send:hover:not(:disabled) { background: #1d4ed8; }
+    #send:disabled { background: #93c5fd; cursor: not-allowed; }
+
+    /* ── Hint ── */
+    .hint {
+      font-size: 11px;
+      color: #aaa;
+      text-align: center;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>SupportAI</h1>
+
+<div id="chat"></div>
+
+<div id="input-area">
+  <input
+    id="question"
+    type="text"
+    placeholder='Ask anything — e.g. "Status of RET001" or "Where is ORD100002?"'
+    onkeydown="if(event.key==='Enter') send()"
+    autocomplete="off"
+  />
+  <button id="send" onclick="send()">Send</button>
+</div>
+<p class="hint">Try: "Status of RET001" · "Where is ORD100002?" · "Refund status REF003" · "What is the return policy?"</p>
+
+<script>
+  const API = 'http://localhost:8000';
+  const SID = 'session_' + Math.random().toString(36).slice(2);
+  let busy = false;
+
+  async function send() {
+    const input    = document.getElementById('question');
+    const question = input.value.trim();
+    if (!question || busy) return;
+
+    input.value = '';
+    busy = true;
+    document.getElementById('send').disabled = true;
+
+    addMessage('user', question);
+    const { bubble, sourcesEl, badgeEl } = addBotMessage();
+
+    try {
+      const res = await fetch(`${API}/chat`, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ question, session_id: SID }),
+      });
+
+      const reader  = res.body.getReader();
+      const decoder = new TextDecoder();
+      let   buffer  = '';
+      let   text    = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          if (!line.startsWith('data: ')) continue;
+          try {
+            const event = JSON.parse(line.slice(6));
+
+            if (event.type === 'order_found' || event.type === 'return_found' || event.type === 'refund_found') {
+              const icons = {order_found:'📦 Order',return_found:'↩ Return',refund_found:'💳 Refund'}; badgeEl.innerHTML = `${icons[event.type]||'📋'} <strong>${event.data}</strong> found`;
+              badgeEl.style.display = 'inline-flex';
+
+            } else if (event.type.endsWith('_not_found')) {
+              badgeEl.innerHTML = `⚠ <strong>${event.data}</strong> not found`;
+              badgeEl.className   = 'order-badge not-found';
+              badgeEl.style.display = 'inline-flex';
+
+            } else if (event.type === 'citations') {
+              renderSources(sourcesEl, event.data);
+
+            } else if (event.type === 'token') {
+              text += event.data;
+              bubble.textContent = text;
+              bubble.classList.add('typing');
+              scrollDown();
+
+            } else if (event.type === 'done') {
+              bubble.classList.remove('typing');
+
+            } else if (event.type === 'error') {
+              bubble.textContent = '⚠ ' + event.data;
+              bubble.classList.remove('typing');
+            }
+          } catch {}
+        }
+      }
+    } catch {
+      bubble.textContent = '⚠ Could not reach backend. Is uvicorn running?';
+      bubble.classList.remove('typing');
+    }
+
+    busy = false;
+    document.getElementById('send').disabled = false;
+    document.getElementById('question').focus();
+    scrollDown();
+  }
+
+  function addMessage(role, text) {
+    const chat = document.getElementById('chat');
+    const msg  = document.createElement('div');
+    msg.className = `msg ${role}`;
+    msg.innerHTML = `<div class="bubble">${esc(text)}</div>`;
+    chat.appendChild(msg);
+    scrollDown();
+  }
+
+  function addBotMessage() {
+    const chat = document.getElementById('chat');
+    const msg  = document.createElement('div');
+    msg.className = 'msg bot';
+    msg.innerHTML = `
+      <span class="order-badge" style="display:none"></span>
+      <div class="bubble typing"></div>
+      <div class="sources"></div>
+    `;
+    chat.appendChild(msg);
+    scrollDown();
+    return {
+      badgeEl:   msg.querySelector('.order-badge'),
+      bubble:    msg.querySelector('.bubble'),
+      sourcesEl: msg.querySelector('.sources'),
+    };
+  }
+
+  function renderSources(el, citations) {
+    if (!citations || !citations.length) return;
+    const seen    = new Set();
+    const sources = citations.map(c => c.source).filter(s => s && !seen.has(s) && seen.add(s));
+    if (!sources.length) return;
+    el.innerHTML = `
+      <span class="source-label">Sources:</span>
+      ${sources.map(s => `<span class="source-tag">${s}</span>`).join('')}
+    `;
+  }
+
+  function scrollDown() {
+    const chat = document.getElementById('chat');
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  function esc(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+</script>
+</body>
+</html>

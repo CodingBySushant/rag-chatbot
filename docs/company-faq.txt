@@ -1,0 +1,114 @@
+ACME STORE - FREQUENTLY ASKED QUESTIONS
+=======================================
+
+ORDERS & SHIPPING
+-----------------
+
+Q: How long does standard shipping take?
+A: Standard shipping takes 5-7 business days within India. Express shipping (2-3 business days) is available for an additional charge of ₹199. Same-day delivery is available in select cities including Mumbai, Delhi, Bangalore, Hyderabad, and Pune for orders placed before 12 PM.
+
+Q: How do I track my order?
+A: Once your order is shipped, you will receive an email and SMS with a tracking number. You can track your order on our website at acmestore.com/track or directly on the courier partner's website. Tracking updates are available within 24 hours of dispatch.
+
+Q: Can I change my delivery address after placing an order?
+A: Address changes are only possible within 1 hour of placing the order. Please contact our support team immediately at support@acmestore.com or call 1800-123-4567. Once the order is dispatched, address changes are not possible.
+
+Q: What are the shipping charges?
+A: Orders above ₹499 get free standard shipping. For orders below ₹499, a flat shipping fee of ₹49 is charged. Express shipping costs ₹199 regardless of order value.
+
+Q: Do you ship internationally?
+A: Currently we only ship within India. International shipping is planned for Q3 2025.
+
+RETURNS & REFUNDS
+-----------------
+
+Q: What is the return policy?
+A: We offer a 30-day hassle-free return policy. Items must be unused, in original packaging, with all tags attached. Electronics and personal care products must be returned within 7 days. Customized or personalized items cannot be returned.
+
+Q: How do I initiate a return?
+A: To initiate a return, log in to your account, go to "My Orders", select the order, and click "Return Item". Choose your reason for return and select a pickup date. Our courier partner will pick up the item from your doorstep. Alternatively, you can drop the item at any of our 500+ partner drop-off points.
+
+Q: How long does refund take?
+A: Once we receive and inspect the returned item (1-2 business days), refunds are processed as follows:
+- UPI / Net Banking: 2-3 business days
+- Credit / Debit Card: 5-7 business days
+- Store Credit / Wallet: Instant
+- Cash on Delivery orders: Refunded to bank account within 7-10 business days via NEFT.
+
+Q: Can I exchange an item instead of returning it?
+A: Yes, exchanges are available for size or color variants of the same product, subject to availability. Exchange requests must be raised within 15 days of delivery.
+
+Q: What if I receive a damaged or wrong item?
+A: If you receive a damaged or incorrect item, please raise a complaint within 48 hours of delivery with photos of the item and packaging. We will arrange an immediate replacement or full refund including shipping charges.
+
+PAYMENTS
+--------
+
+Q: What payment methods do you accept?
+A: We accept the following payment methods:
+- UPI (GPay, PhonePe, Paytm, BHIM)
+- Credit Cards (Visa, Mastercard, Rupay, Amex)
+- Debit Cards
+- Net Banking (50+ banks supported)
+- EMI (No-cost EMI available on orders above ₹3000 on select cards)
+- Cash on Delivery (available on orders up to ₹10,000)
+- ACME Wallet
+- Buy Now Pay Later (via ZestMoney, LazyPay)
+
+Q: Is it safe to save my card details on your website?
+A: Yes, we use PCI-DSS compliant payment gateways. Card details are tokenized and stored securely. We never store your CVV. You can manage or delete saved cards anytime from your account settings.
+
+Q: Why was my payment declined?
+A: Payments can be declined due to: insufficient funds, incorrect card details, bank server issues, or transaction limits. Try a different payment method or contact your bank. If the amount was debited but order not placed, it will be auto-refunded within 5-7 business days.
+
+Q: Do you offer EMI options?
+A: Yes, no-cost EMI is available for 3, 6, and 9 month tenures on orders above ₹3000 on select credit cards from HDFC, ICICI, SBI, Axis, and Kotak banks. Standard EMI is available on more cards.
+
+ACCOUNT & PROFILE
+-----------------
+
+Q: How do I reset my password?
+A: Click "Forgot Password" on the login page and enter your registered email address or mobile number. You will receive an OTP on your mobile and a reset link on your email. The reset link is valid for 30 minutes. After resetting, all active sessions will be logged out for security.
+
+Q: How do I update my mobile number or email?
+A: Log in and go to Account Settings > Personal Information. Updating mobile number requires OTP verification on your new number. Email updates require verification from the new email address. Changes may take up to 24 hours to reflect.
+
+Q: Can I have multiple addresses saved?
+A: Yes, you can save up to 10 delivery addresses in your address book. You can set one as your default address. Manage your addresses in Account Settings > My Addresses.
+
+Q: How do I delete my account?
+A: To delete your account, go to Account Settings > Privacy > Delete Account. Note that account deletion is permanent and all your order history, wishlist, and rewards points will be lost. Active orders must be completed or cancelled before deletion. Contact support if you need help.
+
+PRODUCTS & INVENTORY
+--------------------
+
+Q: How do I know if a product is genuine?
+A: All products on ACME Store are sourced directly from brands or authorized distributors. You can verify product authenticity by checking the hologram sticker on the packaging. Electronics come with a brand warranty card.
+
+Q: What does "Out of Stock" mean and when will it be available again?
+A: Out of Stock means the product is temporarily unavailable. Click "Notify Me" to receive an email/SMS when it's back in stock. Restock timelines vary by product, typically 7-15 days.
+
+Q: Can I cancel an order?
+A: Orders can be cancelled before dispatch. Go to My Orders, select the order, and click Cancel. If already dispatched, you can refuse delivery or initiate a return after delivery. Prepaid order refunds are processed within 5-7 business days after cancellation.
+
+LOYALTY & OFFERS
+----------------
+
+Q: How does the ACME Rewards program work?
+A: You earn 1 reward point for every ₹100 spent. 100 points = ₹10 discount. Points expire after 12 months of inactivity. Points cannot be earned on orders paid via Cash on Delivery or on already discounted items beyond 50% off.
+
+Q: How do I apply a coupon code?
+A: Enter your coupon code in the "Apply Coupon" field on the cart or checkout page. Only one coupon can be applied per order. Coupons cannot be combined with ongoing sale discounts unless stated otherwise.
+
+CUSTOMER SUPPORT
+----------------
+
+Q: How do I contact customer support?
+A: You can reach us through:
+- Live Chat: Available on website and app, 9 AM to 9 PM, 7 days a week
+- Email: support@acmestore.com (response within 24 hours)
+- Phone: 1800-123-4567 (toll-free), 9 AM to 6 PM, Monday to Saturday
+- WhatsApp: +91 98765 43210
+
+Q: What is the escalation process?
+A: If your issue is not resolved within 48 hours, you can escalate to our senior support team by replying to your ticket with the subject line "ESCALATE". For unresolved issues beyond 7 days, you can reach our grievance officer at grievance@acmestore.com.
