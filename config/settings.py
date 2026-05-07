@@ -18,7 +18,9 @@ RERANKER_MODEL  = os.getenv("RERANKER_MODEL",  "cross-encoder/ms-marco-MiniLM-L-
 EMBEDDING_DIM   = int(os.getenv("EMBEDDING_DIM", "384"))   # must match model output
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
-QDRANT_PATH = os.getenv("QDRANT_PATH", "./qdrant_db")      # local on-disk Qdrant
+QDRANT_URL     = os.getenv("QDRANT_URL",     "")
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY", "")
+# QDRANT_PATH = os.getenv("QDRANT_PATH", "./qdrant_db")      # local on-disk Qdrant
 DOCS_DIR    = os.getenv("DOCS_DIR",    "./docs")
 HASH_FILE   = os.getenv("HASH_FILE",   "./ingested_hashes.json")  # duplicate tracking
 
