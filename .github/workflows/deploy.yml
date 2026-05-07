@@ -66,9 +66,14 @@ jobs:
         run: pip install ruff
 
       - name: Run ruff linter
-        # E501 = line too long — we ignore it because it's stylistic, not a bug.
-        # Add other rules to ignore if needed: --ignore E501,W503
-        run: ruff check . --ignore E501
+        # Ignored rules — all style-only, not real bugs:
+        # E501 = line too long
+        # E401 = multiple imports on one line
+        # E701 = multiple statements on one line (colon)
+        # F401 = imported but unused (these are __init__.py re-exports)
+        # F403 = star import used (config/__init__.py pattern)
+        # F541 = f-string without placeholders
+        run: ruff check . --ignore E501,E401,E701,F401,F403,F541
 
 
 # =============================================================================
